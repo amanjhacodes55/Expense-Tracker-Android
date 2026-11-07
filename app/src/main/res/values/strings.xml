@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="expenses">Expenses</string>
+
+    <!-- Main screen -->
+    <string name="total_spending">Total spending</string>
+    <string name="this_month">This month</string>
+    <string name="by_category">By category</string>
+    <string name="history">History</string>
+    <string name="empty_all">No expenses yet.\nTap + to add your first one.</string>
+    <string name="empty_filtered">No expenses in this category yet.</string>
+    <string name="expense_details">%1$s · %2$s</string>
+    <string name="expense_deleted">Expense deleted</string>
+    <string name="undo">Undo</string>
+    <plurals name="expense_count">
+        <item quantity="one">%d expense</item>
+        <item quantity="other">%d expenses</item>
+    </plurals>
+
+    <!-- Categories -->
+    <string name="category_all">All</string>
+    <string name="category_food">Food</string>
+    <string name="category_travel">Travel</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_bills">Bills</string>
+    <string name="category_other">Other</string>
+
+    <!-- Add / edit screen -->
+    <string name="add_expense">Add expense</string>
+    <string name="edit_expense">Edit expense</string>
+    <string name="back">Back</string>
+    <string name="title_hint">Title</string>
+    <string name="amount_hint">Amount</string>
+    <string name="rupee_symbol">₹</string>
+    <string name="category">Category</string>
+    <string name="date_hint">Date</string>
+    <string name="pick_date">Date of the expense</string>
+    <string name="note_hint">Note (optional)</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_title">Please enter a title</string>
+    <string name="error_amount">Enter an amount greater than 0</string>
+    <string name="error_category">Please choose a category</string>
+    <string name="expense_added">Expense added</string>
+    <string name="expense_updated">Expense updated</string>
+    <string name="expense_not_found">This expense no longer exists</string>
+    <string name="delete_title">Delete expense?</string>
+    <string name="delete_message">\"%1$s\" will be removed for good.</string>
+</resources>

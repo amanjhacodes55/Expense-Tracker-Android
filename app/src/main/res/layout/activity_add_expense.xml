@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddExpenseActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:liftOnScrollTargetViewId="@id/scrollView">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationContentDescription="@string/back"
+            app:navigationIcon="@drawable/ic_arrow_back"
+            tools:title="@string/add_expense" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titleLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/title_hint"
+                app:counterEnabled="true"
+                app:counterMaxLength="40">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapSentences"
+                    android:maxLength="40" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/amountLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/amount_hint"
+                app:prefixText="@string/rupee_symbol">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amountInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:maxLength="10" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/category"
+                android:textAppearance="?attr/textAppearanceTitleSmall" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/categoryGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/categoryFood"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_food"
+                    app:chipIcon="@drawable/ic_food"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/categoryTravel"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_travel"
+                    app:chipIcon="@drawable/ic_travel"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/categoryShopping"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_shopping"
+                    app:chipIcon="@drawable/ic_shopping"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/categoryBills"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_bills"
+                    app:chipIcon="@drawable/ic_bills"
+                    app:chipIconVisible="true" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/categoryOther"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/category_other"
+                    app:chipIcon="@drawable/ic_other"
+                    app:chipIconVisible="true" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/categoryError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/error_category"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorError"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/date_hint"
+                app:startIconDrawable="@drawable/ic_calendar">
+
+                <!-- Not typed into; tapping it opens the date picker -->
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/noteLayout"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="@string/note_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/noteInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="200"
+                    android:minLines="2" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:paddingVertical="14dp"
+                android:text="@string/save" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

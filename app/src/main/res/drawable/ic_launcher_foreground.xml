@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- A receipt with three lines cut out, scaled up to sit inside the icon's safe zone -->
+    <group
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translateX="30"
+        android:translateY="30">
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillType="evenOdd"
+            android:pathData="M3,22l1.5,-1.5L6,22l1.5,-1.5L9,22l1.5,-1.5L12,22l1.5,-1.5L15,22l1.5,-1.5L18,22l1.5,-1.5L21,22V2l-1.5,1.5L18,2l-1.5,1.5L15,2l-1.5,1.5L12,2l-1.5,1.5L9,2 7.5,3.5 6,2 4.5,3.5 3,2v20zM6.5,7h11v1.6h-11zM6.5,11h11v1.6h-11zM6.5,15h7v1.6h-7z" />
+    </group>
+</vector>
